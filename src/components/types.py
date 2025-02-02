@@ -1,5 +1,8 @@
 from dataclasses import dataclass
+from tkinter import NO
 from typing import Literal
+
+from narwhals import Unknown
 
 # Define available options as tuples for consistency
 INTERVIEW_TYPES = ("General", "Technical", "Behavioral", "Job Specific")
@@ -10,6 +13,8 @@ TECHNICAL_FOCUS_OPTIONS = (
     "TypeScript Developer",
     "Scala Developer",
     "Go Developer",
+    "UX/UI Designer",
+    "Product Manager",
 )
 
 # Type definitions using Literal
@@ -21,6 +26,8 @@ TechnicalFocus = Literal[
     "TypeScript Developer",
     "Scala Developer",
     "Go Developer",
+    "UX/UI Designer",
+    "Product Manager",
 ]
 
 
@@ -55,3 +62,20 @@ class InterviewSettings:
 class ChatMessage:
     role: Literal["assistant", "user", "system"]
     content: str
+
+
+@dataclass
+class AiOptions:
+    temperature: float | None = None
+    top_p: float | None = None
+    frequency_penalty: float | None = None
+    presence_penalty: float | None = None
+    max_tokens: int | None = None
+
+    def __init__(self, session_state: dict) -> None:
+        """Initialize AI options from session state dictionary."""
+        self.temperature = session_state.get("ai_temperature")
+        self.top_p = session_state.get("ai_top_p")
+        self.frequency_penalty = session_state.get("ai_frequency_penalty")
+        self.presence_penalty = session_state.get("ai_presence_penalty")
+        self.max_tokens = session_state.get("ai_max_tokens")
