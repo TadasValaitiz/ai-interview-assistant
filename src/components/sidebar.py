@@ -2,7 +2,6 @@ import streamlit as st
 from typing import Tuple
 from dataclasses import dataclass
 from components.types import (
-    AiOptions,
     InterviewSettings,
     TECHNICAL_FOCUS_OPTIONS,
     INTERVIEW_TYPES,
@@ -60,7 +59,7 @@ def sidebar() -> InterviewSettings:
                 key="job_description",
             )
 
-        #ai options
+        # ai options
         with st.expander("Options"):
             st.slider(
                 "Temperature",

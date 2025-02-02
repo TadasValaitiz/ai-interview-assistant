@@ -6,7 +6,6 @@ from components.types import AiOptions, ChatMessage, InterviewSettings
 from openai.types.chat import ChatCompletionMessageParam
 import logging
 
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
