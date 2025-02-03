@@ -11,3 +11,8 @@ pip install -r requirements.txt
 ```
 streamlit run src/app.py
 ```
+
+### OpenAI Api key
+For application to work you have two options:
+1. Create `.env` file like `.env.sample` and add your OpenAI API key here
+2. Enter API key in streamlit web application UI
