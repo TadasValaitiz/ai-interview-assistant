@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from tkinter import NO
 import streamlit as st
 from openai import OpenAI
 from components.types import AiOptions, ChatMessage, InterviewSettings

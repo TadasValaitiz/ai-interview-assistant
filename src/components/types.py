@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from tkinter import NO
 from typing import Literal
 
 from narwhals import Unknown
