@@ -96,7 +96,7 @@ def fetch_open_AI(messages: list[ChatCompletionMessageParam]) -> str | None:
     try:
         client = OpenAI(api_key=st.session_state.openai_api_key)
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=messages,
             temperature=0.7,
             top_p=options.top_p,
