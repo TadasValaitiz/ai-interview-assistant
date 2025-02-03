@@ -72,17 +72,19 @@ def create_system_prompt(settings: InterviewSettings) -> str:
         )
 
     if settings.has_job_description:
-        system_prompt += f"\nThe candidate is interviewing for a position with this description: {settings.job_description}"
+        system_prompt += f"\nThe candidate is interviewing for a position with this description: {settings.job_description}."
 
-    system_prompt += """\nAsk candidate questions. 
-    Focus only on interview subject. If candidate reply is not related with interview, repeat question. If candidate replies that he don't know, procceed with next question.
-    \nYou can start with simple questions, then proceed with more dificult. For developer roles, you can give some code snippets.
-    \nKeep track of how many interview questions candidate answered.
-    \nWhen Evaluating interview provide evaluation for each question. If you can add something to answer, please add, so candidate can learn later.
-    \nnExample 1 for typescript developer interview:
+    system_prompt += """\n
+    Ask candidate questions. Focus only on interview subject. If candidate reply is not related with interview, repeat question. If candidate replies that he don't know, procceed with next question.
+    You can start with simple questions, then proceed with more dificult. For developer roles, you can give some code snippets.
+    Keep track of how many interview questions candidate answered.
+    When Evaluating interview provide evaluation for each question. If you can add something to answer, please add, so candidate can learn later.
+    -----
+    Example 1 for typescript developer interview:
     Question 1. What is the difference between `const` and `let` in typescript?
-    \nnExample 1 for typescript developer interview:
-    Question 2. What is the difference between interface and class and type in typescript?
+    -----
+    Example 2 for typescript developer interview:
+    Question 2. What is the difference between interface, class and type in typescript?
     """
     return system_prompt
 
